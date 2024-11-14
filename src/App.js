@@ -58,7 +58,7 @@ function App() {
           </>
         ) : (
           <>
-            <h1 className="neon-text">Happy Birthday! 🎂 🥳 SWEET HEART ❤ Mr.Dabeer</h1>
+            <h1 className="neon-text">❤ Happy Birthday! 🎂 🥳 SWEET HEART  Mr.Dabeer ❤</h1>
             {/* Apply heart shape and square toggle effect */}
             <img
               src="unnamed.png"
