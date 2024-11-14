@@ -1,4 +1,11 @@
 /* Apply global styles to remove default margin and padding */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+.satisfy-regular {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -50,13 +57,6 @@ p {
   font-size: 1.5rem;
   margin: 10px 0;
   color: #ffb3d9; /* Soft pastel pink */
-}
-
-.birthday-image {
-  width: 100%;
-  max-width: 300px;
-  margin-top: 20px;
-  border-radius: 10px;
 }
 
 .message {
@@ -114,9 +114,7 @@ p {
   box-shadow: 0 0 10px #ff4d94, 0 0 20px #ff4d94, 0 0 30px #ff4d94;
 }
 
-
-/*  */
-
+/* Heart shape and fade-in/out animation */
 @keyframes fadeInOut {
   0%, 100% {
     opacity: 0; /* Start and end with transparency */
@@ -126,20 +124,19 @@ p {
   }
 }
 
+/* Heart shape mask */
 @keyframes heartShapeTransition {
   0%, 100% {
-    clip-path: polygon(-41% 0, 50% 91%, 141% 0); /* Heart shape */  }
-  50% {
     clip-path: polygon(-41% 0, 50% 91%, 141% 0); /* Heart shape */
   }
 }
 
 .birthday-image {
-  width: 100%;
-  max-width: 300px;
-  margin-top: 20px;
-  border-radius: 10px;
-  opacity: 0; /* Start invisible */
+  width: 100%; /* Scale to the container's width */
+  max-width: 500px; /* Optional: Limit the image's max width */
+  height: auto; /* Keep the aspect ratio */
+  display: block; /* Ensure the image is centered */
+  margin: 0 auto; /* Center the image horizontally */
   
   /* Heart shape mask */
   mask: 
@@ -150,5 +147,5 @@ p {
   /* Animation properties */
   animation: 
     heartShapeTransition 5s infinite, /* Shape transition animation */
-    fadeInOut 3s infinite;            /* Fade-in and fade-out effect */
+    fadeInOut 5s infinite;            /* Fade-in and fade-out effect */
 }
