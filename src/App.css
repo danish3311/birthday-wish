@@ -74,16 +74,18 @@ p {
   text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2, 0 0 30px #ff66b2;
 }
 
+/* Neon Text */
 .neon-text {
   text-shadow: 0 0 10px #ff80cc, 0 0 20px #ff80cc, 0 0 30px #ff80cc, 0 0 40px #ff80cc;
 }
 
+/* Surprise Button */
 .neon-button {
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 20px 40px;
+  font-size: 1.5rem;
   background-color: #ff80cc; /* Soft pink */
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
   cursor: pointer;
   margin-top: 20px;
@@ -110,4 +112,43 @@ p {
 .neon-button:hover {
   background-color: #ff4d94;
   box-shadow: 0 0 10px #ff4d94, 0 0 20px #ff4d94, 0 0 30px #ff4d94;
+}
+
+
+/*  */
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0; /* Start and end with transparency */
+  }
+  50% {
+    opacity: 1; /* Fully visible in the middle */
+  }
+}
+
+@keyframes heartShapeTransition {
+  0%, 100% {
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0); /* Heart shape */  }
+  50% {
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0); /* Heart shape */
+  }
+}
+
+.birthday-image {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+  opacity: 0; /* Start invisible */
+  
+  /* Heart shape mask */
+  mask: 
+    radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+    radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+    linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+
+  /* Animation properties */
+  animation: 
+    heartShapeTransition 5s infinite, /* Shape transition animation */
+    fadeInOut 3s infinite;            /* Fade-in and fade-out effect */
 }
